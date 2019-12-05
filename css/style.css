@@ -1,0 +1,26 @@
+.fundo {
+  height: 500px;
+  min-height: 500px;
+  background-image: url('img/cbf.jfif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-amarelo {
+  background-color: #FFD302;
+}
+.bg-azul {
+  background-color: #0159FE;
+}
+.bg-verde {
+  background-color: #009D53;
+}
+.bg-azul-preto {
+  background-color: #24104A;
+}
+.grad-pagina {
+  background-image: linear-gradient( #09a3e4 , #1794c9);
+}
+.grad {
+  background-image: linear-gradient( #17bf5f , #009D53);
+}
