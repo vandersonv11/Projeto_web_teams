@@ -1,120 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr" ng-app="index">
-  <head>
-    <meta charset="utf-8">
 
-    <!-- Required meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
 
-    <!-- Bootstrap e CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- angularjs minificado -->
-    <script src="js/angular.min.js"></script>
+  <!-- Bootstrap e CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <script>
+  <!-- angularjs minificado -->
+  <script src="js/angular.min.js"></script>
 
-    </script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> -->
+  <script>
+    //criando uma module
+    angular.module("index", []);
 
-    <title>Time</title>
-  </head>
-  <body class="bg-dark " >
-    <header>
-      <!-- painel header -->
-      <div class="jumbotron jumbotron-fluid bg-amarelo container-fluid">
-        <div class="container">
-          <div class="row ">
-            <!-- coluna lado esquerdo  -->
-            <div class="d-flex flex-column justify-content-between m-2">
-              <!-- d-flex e flex-comlumn para al
+    // adicionando um controler
+    angular.module("index").controller("indexCtrl", function($scope) {
+      // view/ scope faz a ligação entre a view e a controller
+      $scope.teste = "text";
+    });
+  </script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> -->
+
+  <title>Time</title>
+</head>
+
+<body class="bg-dark ">
+  <header>
+    <!-- painel header -->
+    <div class="jumbotron jumbotron-fluid bg-amarelo container-fluid">
+      <div class="container">
+        <div class="row ">
+          <!-- coluna lado esquerdo  -->
+          <div class="d-flex flex-column justify-content-between m-2">
+            <!-- d-flex e flex-comlumn para al
               inhar verticalmente -->
 
-              <div class="" >
-                <h1 >BRASILEIRÃO 2019</h1>
-                <p>FICHA TÉCNICA</p>
-              </div>
-
-              <!-- botões das paginas -->
-              <div class=" ">
-                <a href="src/cadastro.html" class="btn btn-lg border text-light grad">Cadastrar</a>
-                <a href="src/editar.html" class="btn btn-lg border  text-light grad">Editar</a>
-                <a href="src/relatorio.html" class="btn btn-lg border  text-light grad">Relatório</a>
-              </div>
+            <div class="">
+              <h1>BRASILEIRÃO 2019</h1>
+              <p>FICHA TÉCNICA</p>
             </div>
-            <!-- fim da coluna esquerda -->
 
-            <!-- coluna direita -->
-            <div class="col-md m-2">
-              <!-- imagem CBF -->
-              <div class="">
-                <img src="img/cbf.jfif" class="img-fluid" >
-              </div>
-              <div class="row justify-content-end align-items-center">
+            <!-- botões das paginas -->
+            <div class="" ng-controller="indexCtrl">
+              <a href="paginas/cadastro.html" class="btn btn-lg border text-light grad">Cadastro</a>
+              <a href="paginas/editar.html" class="btn btn-lg border  text-light grad">Editar</a>
+              <a href="paginas/relatorio.html" class="btn btn-lg border  text-light grad">Relatório</a>
+            </div>
+          </div>
+          <!-- fim da coluna esquerda -->
 
-                <!-- barra de Pesquisa -->
-                <div class="col-sm-9">
-                  <div class="input-group  ">
-                    <input type="text" class="form-control form-control-lg" placeholder="Pesquisa"  aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                      <a href="# "class="btn btn-lg border grad"  id="button-addon2">
-                        <img  src="img/icons/search.svg" class="" width="20" height="20" alt="">
-                      </a>
-                    </div>
+          <!-- coluna direita -->
+          <div class="col-md m-2">
+            <!-- imagem CBF -->
+            <div class="">
+              <img src="img/cbf.jfif" class="img-fluid">
+            </div>
+            <div class="row justify-content-end align-items-center">
+
+              <!-- barra de Pesquisa -->
+              <div class="col-sm-9">
+                <div class="input-group  ">
+                  <input type="text" class="form-control form-control-lg" placeholder="Pesquisa" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <a href="# " class="btn btn-lg border grad" id="button-addon2">
+                      <img src="img/icons/search.svg" class="" width="20" height="20" alt="">
+                    </a>
                   </div>
                 </div>
-
               </div>
-              <!-- fim barra de Pesquisa -->
+
             </div>
-            <!-- fim da coluna direita -->
+            <!-- fim barra de Pesquisa -->
           </div>
+          <!-- fim da coluna direita -->
         </div>
       </div>
-      <!-- fim painel header -->
-    </header>
-    <div class="container bg-azul vh-100">
-      <table class="table table-striped table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">nome</th>
-            <th scope="col">coach</th>
-            <th scope="col">description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
     </div>
+    <!-- fim painel header -->
+  </header>
+  <div class="container bg-azul vh-100">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">nome</th>
+          <th scope="col">coach</th>
+          <th scope="col">description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+  </div>
 
 
-    <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+  <!-- JavaScript (Opcional) -->
+  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
 
-  </body>
+</body>
+
 </html>
