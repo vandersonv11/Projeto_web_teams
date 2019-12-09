@@ -1,130 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr" ng-app="index">
-
-<head>
-  <meta charset="utf-8">
-
-  <!-- Required meta tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap e CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- angularjs minificado -->
-  <script src="js/angular.min.js"></script>
-
-  <script>
-    //criando uma module
-    angular.module("index", []);
-
-    // adicionando um controler
-    angular.module("index").controller("indexCtrl", function($scope) {
-      // view/ scope faz a ligação entre a view e a controller
-      $scope.teste = "text";
-    });
-  </script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> -->
-
-  <title>Time</title>
-</head>
-
-<body class="bg-dark ">
-  <header>
-    <!-- painel header -->
-    <div class="jumbotron jumbotron-fluid bg-amarelo container-fluid">
-      <div class="container">
-        <div class="row ">
-          <!-- coluna lado esquerdo  -->
-          <div class="d-flex flex-column justify-content-between m-2">
-            <!-- d-flex e flex-comlumn para al
-              inhar verticalmente -->
-
-            <div class="">
-              <h1>BRASILEIRÃO 2019</h1>
-              <p>FICHA TÉCNICA</p>
-            </div>
-
-            <!-- botões das paginas -->
-            <div class="" ng-controller="indexCtrl">
-              <a href="paginas/cadastro.html" class="btn btn-lg border text-light grad">Cadastro</a>
-              <a href="paginas/editar.html" class="btn btn-lg border  text-light grad">Editar</a>
-              <a href="paginas/relatorio.html" class="btn btn-lg border  text-light grad">Relatório</a>
-            </div>
-          </div>
-          <!-- fim da coluna esquerda -->
-
-          <!-- coluna direita -->
-          <div class="col-md m-2">
-            <!-- imagem CBF -->
-            <div class="">
-              <img src="img/cbf.jfif" class="img-fluid">
-            </div>
-            <div class="row justify-content-end align-items-center">
-
-              <!-- barra de Pesquisa -->
-              <div class="col-sm-9">
-                <div class="input-group  ">
-                  <input type="text" class="form-control form-control-lg" placeholder="Pesquisa" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <a href="# " class="btn btn-lg border grad" id="button-addon2">
-                      <img src="img/icons/search.svg" class="" width="20" height="20" alt="">
-                    </a>
-                  </div>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Blank Template for Bootstrap</title>
+        <!-- Bootstrap e CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <!-- Agularjs -->
+        <script src="js/angular.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="jumbotron bg-amarelo">
+                <div class="container pghelper-bs4-grid-parent-relative">
+                    <div class="row">
+                        <div class="col-md-4 d-flex flex-column justify-content-between">
+                            <div>
+                                <h1>EQUIPES BRASILEIRÃO 2019</h1>
+                                <p>FICHA TÉCNICA</p>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a type="button" class="btn btn-secondary" href="paginas/cadastro.html">Cadastro</a>
+                                <a type="button" class="btn btn-secondary" href="paginas/relatorio.html">Relatório</a>
+                                <a type="button" class="btn btn-secondary" href="paginas/editar.html">Editar</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 flex-column align-items-end">
+                            <div>
+                                <img src="Img/cbf.jfif" class="img-fluid">
+                            </div>
+                            <div>
+                                <div class="input-group justify-content-center">
+                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" id="button-addon2" type="button">Pesquisa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
             </div>
-            <!-- fim barra de Pesquisa -->
-          </div>
-          <!-- fim da coluna direita -->
-        </div>
-      </div>
-    </div>
-    <!-- fim painel header -->
-  </header>
-  <div class="container bg-azul vh-100">
-    <table class="table table-striped table-dark">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">nome</th>
-          <th scope="col">coach</th>
-          <th scope="col">description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-  </div>
-
-
-  <!-- JavaScript (Opcional) -->
-  <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-  <script src="js/jquery-3.3.1.slim.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
-
-</body>
-
+        </header>
+        <main class="vh-100">
+            <div class="container">
+                <legend>Equipes</legend>
+                <table class="table table-striped">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th scope="col-1">ID</th>
+                            <th scope="col-3">Nome</th>
+                            <th scope="col-3">Treinador</th>
+                            <th scope="col-4">Descrição</th>
+                            <th scope="col-1">Deletar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#">&lt;&lt;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">&gt;&gt;</a>
+            </li>
+        </ul>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>

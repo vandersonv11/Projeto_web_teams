@@ -24,6 +24,9 @@
 .grad {
   background-image: linear-gradient( #17bf5f , #009D53);
 }
+.bg-preto {
+  background-color: #212529;
+}
 .tamanho-botao {
   width: 100px;
 }

@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr" ng-app="">
-  <head>
-    <meta charset="utf-8">
-    <title>Cadastro</title>
-  </head>
-  <body>
-    <h1>Cadastro</h1>
-  </body>
+<html lang="en" class="btn-outline-light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Blank Template for Bootstrap</title>
+        <!-- Bootstrap e CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <!-- Agularjs -->
+        <script src="../js/angular.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-amarelo">
+            <a class="navbar-brand" href="../index.html"><img src="../img/icons/soccer-ball.ico" class="img-fluid"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler140" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler140">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link btn-outline-success" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-success" href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-success" href="relatorio.html">Relatório</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-success" href="#">Editar</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+        <main class="vh-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <form class="col-md-6 bg-light font-weight-lighter">
+                        <legend>Cadastro</legend>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Nome</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Treinador</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Descrição</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary m-2">Salvar</button>
+                            <button type="button" class="btn btn-secondary m-2">Cancelar</button>
+                            <button type="button" class="btn btn-secondary m-2">Right</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="../js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
 </html>
