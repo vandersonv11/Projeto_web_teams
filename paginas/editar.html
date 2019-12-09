@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr" ng-app="">
+<html lang="pt-br" dir="ltr" ng-app="">
   <head>
     <meta charset="utf-8">
 
@@ -14,7 +14,7 @@
     <script src="../js/angular.min.js"></script>
     <title>Editar</title>
   </head>
-  <body>
+  <body class="bg-dark">
     <header class="">
       <nav class="navbar navbar-expand-lg navbar-light bg-amarelo">
 
@@ -30,13 +30,13 @@
               <a href="../index.html" class="btn border grad mx-3 tamanho-botao text-light">Inicio</a>
             </li>
             <li class="nav-item active">
-              <a href="cadastro.html" class="btn border grad mx-3 tamanho-botao text-light" >Cadastro</a>
+              <a href="../paginas/cadastro.html" class="btn border grad mx-3 tamanho-botao text-light" >Cadastro</a>
             </li>
             <li class="nav-item active">
-              <a href="editar.html" class="btn border grad mx-3 tamanho-botao text-light">Editar</a>
+              <a href="../paginas/editar.html" class="btn border grad mx-3 tamanho-botao text-light">Editar</a>
             </li>
             <li class="nav-item active">
-              <a href="relatorio.html" class="btn border grad mx-3 tamanho-botao text-light">Relatório</a>
+              <a href="../paginas/relatorio.html" class="btn border grad mx-3 tamanho-botao text-light">Relatório</a>
             </li>
 
           </ul>
@@ -57,11 +57,52 @@
       </nav>
     </header>
 
-    <main>
-      
+    <main class="container bg-azul py-5">
+      <form class="container bg-dark text-light ">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Cadastro de Time</legend>
+
+          <!-- Text input-->
+          <div class="form-group ">
+            <label class="col control-label" for="name">NOME</label>
+            <div class="col">
+            <input id="name" name="name" type="text" placeholder="" class="form-control input-md">
+            <span class="help-block">Informe nome do time</span>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col control-label" for="treinador">TREINADOR</label>
+            <div class="col">
+            <input id="treinador" name="treinador" type="text" placeholder="" class="form-control input-md">
+            <span class="help-block">Informe nome do treinador</span>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col control-label" for="descricao">descrição</label>
+            <div class="col">
+            <textarea id="descricao" name="descricao" type="text" placeholder="" class="form-control input-md"></textarea>
+            <span class="help-block">Informe a descrição do time</span>
+            </div>
+          </div>
+
+          <!-- Button (Double) -->
+          <div class="form-group">
+            <label class="col control-label" for="salvar"></label>
+            <div class="col">
+              <button id="salvar" name="salvar" class="btn btn-success">SALVAR</button>
+              <button id="cancelar" name="cancelar" class="btn btn-danger">Cancelar</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
     </main>
-
-
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
