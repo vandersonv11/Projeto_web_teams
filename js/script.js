@@ -1,1 +1,1 @@
-angular.module("listaTeams", []);
+var app = angular.module('listaTeams', []);
