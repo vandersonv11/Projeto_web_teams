@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="listaTeams">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Blank Template for Bootstrap</title>
+
         <!-- Bootstrap e CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
         <!-- Agularjs -->
-        <script src="js/angular.js"></script>
+        <script src="lib/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/controller/listaTeamsCtrl.js"></script>
+
+        <title>EQUIPES</title>
     </head>
-    <body>
+    <body ng-controller="listaTeamsCtrl">
         <header>
             <div class="jumbotron bg-amarelo">
                 <div class="container pghelper-bs4-grid-parent-relative">
@@ -24,9 +28,9 @@
                                 <p>FICHA TÉCNICA</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a type="button" class="btn btn-secondary" href="paginas/cadastro.html">Cadastro</a>
-                                <a type="button" class="btn btn-secondary" href="paginas/relatorio.html">Relatório</a>
-                                <a type="button" class="btn btn-secondary" href="paginas/editar.html">Editar</a>
+                                <a type="button" class="btn btn-secondary" href="view/cadastro.html">Cadastro</a>
+                                <a type="button" class="btn btn-secondary" href="view/relatorio.html">Relatório</a>
+                                <a type="button" class="btn btn-secondary" href="view/editar.html">Editar</a>
                             </div>
                         </div>
                         <div class="col-md-8 flex-column align-items-end">
