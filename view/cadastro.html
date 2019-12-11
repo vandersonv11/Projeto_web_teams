@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="btn-outline-light">
+<html lang="pt-br" class="btn-outline-light" ng-app="listaTeams">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +12,11 @@
         <link href="../css/style.css" rel="stylesheet">
         <!-- Agularjs -->
         <script src="../lib/angular.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/controller/listaTeamsCtrl.js"></script>
         <title>Cadastro</title>
     </head>
-    <body>
+    <body ng-controller="listaTeamsCtrl">
         <nav class="navbar navbar-expand-lg navbar-light bg-amarelo">
             <a class="navbar-brand" href="../index.html"><img src="../img/icons/soccer-ball.ico" class="img-fluid"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler140" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,29 +44,60 @@
             </div>
         </nav>
         <main class="vh-100">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <form class="col-md-6 bg-light font-weight-lighter">
+            <div class="container-fluid">
+                <div class="row justify-content-center" >
+                  <div class="col">
+                    <table class="table table-striped" ng-show="teams.teams.length > 0">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th scope="col-1">ID</th>
+                                <th scope="col-3"><a href="#" ng-click="ordenarPor('name')">Nome</a></th>
+                                <th scope="col-3">Treinador</th>
+                                <th scope="col-4">Descrição</th>
+                                <th scope="col-1">Deletar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  ng-class="{'selecionado negrito': team.selecionado}" ng-repeat="team in teams.teams | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao" >
+                                <th scope="row">{{team.id}}</th>
+                                <td>{{team.name}}</td>
+                                <td>{{team.coach}}</td>
+                                <td>{{team.description}}</td>
+                                <td>deletar com img</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                  </div>
+                    <form class="col-md-4 bg-light font-weight-lighter" name="teamForm">
                         <legend>Cadastro</legend>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nome</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1"/>
+                            <input type="text" class="form-control" ng-model="team.name" name="name" placeholder="Equipe" ng-required="true" id="exampleFormControlInput1"/>
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Treinador</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"/>
+                            <input type="text" class="form-control" ng-model="team.coach" name="coach" placeholder="Técnico" ng-required="true" id="formGroupExampleInput"/>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Descrição</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" ng-model="team.description" name="description" placeholder="Descrição" ng-required="true" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
+                        <div ng-show="teamForm.nome.$dirty" ng-messages="teamForm.nome.$error">
+                    			<div ng-message="required" class="alert alert-danger">
+                    				Por favor, preencha o campo nome!
+                    			</div>
+
+                    		</div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary m-2">Salvar</button>
+                            <button type="button" class="btn btn-secondary m-2" ng-click="adicionarTeam(team)" ng-disabled="teamForm.$invalid">Salvar</button>
                             <button type="button" class="btn btn-secondary m-2">Cancelar</button>
-                            <button type="button" class="btn btn-secondary m-2">Right</button>
+
                         </div>
                     </form>
+
                 </div>
+
             </div>
         </main>
         <!-- Bootstrap core JavaScript
