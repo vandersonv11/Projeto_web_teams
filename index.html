@@ -28,7 +28,8 @@
                                 <p>FICHA TÉCNICA</p>
                             </div>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a type="button" class="btn btn-secondary text-light" data-toggle="modal" data-target="#exampleModal">Cadastro</a>
+                              <!-- BOTÕES  -->
+                                <a type="button" class="btn btn-secondary text-light" data-toggle="modal" data-target="#exampleModal" ng-click="cadTeams()">Cadastro</a>
                                 <!-- <a type="button" class="btn btn-secondary" href="view/relatorio.html">Relatório</a> -->
                                 <a type="button" class="btn btn-secondary" href="view/editar.html">Editar</a>
                             </div>
@@ -38,6 +39,7 @@
                                 <img src="Img/cbf.jfif" class="img-fluid">
                             </div>
                             <div>
+                                <!-- BARRA DE PESQUISA -->
                                 <div class="input-group justify-content-center">
                                     <input type="text" class="form-control" ng-model="criterioDeBusca" placeholder="O que você está buscando?" aria-label="Recipient's username" aria-describedby="button-addon2"/>
 
@@ -52,23 +54,25 @@
             <div class="container">
                 <legend>Equipes</legend>
 
-                <table class="table table-striped"   ng-show="array.length > 0">
+                <table class="table table-striped"   >
                     <thead class="bg-dark text-white">
                         <tr>
                             <th scope="col-1">ID</th>
-                            <th scope="col-3"><a href="#" ng-click="ordenarPor('name')">Nome</a></th>
+                            <th scope="col-2"><a href="#" ng-click="ordenarPor('name')">Nome</a></th>
                             <th scope="col-3">Treinador</th>
                             <th scope="col-4">Descrição</th>
+                            <th scope="col-1">Editar</th>
                             <th scope="col-1">Deletar</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody ng-show="array.length > 0">
                         <tr   ng-repeat="team in array | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao" >
                             <th scope="row"><a href="#">{{team.id}}</a></th>
                             <td>{{team.name}}</td>
                             <td>{{team.coach}}</td>
                             <td>{{team.description}}</td>
-                            <td><button class="btn btn-danger " ng-click="apagarTeam(team)">Del</button></td>
+                            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal" ng-click="editarTeam(user)">Edit</button></td>
+                            <td><button class="btn btn-danger btn-sm" ng-click="apagarTeam(team)">Del</button></td>
                         </tr>
 
                     </tbody>
@@ -79,12 +83,13 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">CADASTRO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{titulo}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
+                    <!-- FORM MODAL -->
                     <form name="teamForm">
 
                       <div class="form-group">
@@ -109,8 +114,14 @@
                   </div>
                   <div class="modal-footer">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary m-2" ng-click="adicionarTeam(team)" ng-disabled="teamForm.$invalid">Salvar</button>
-                        <button type="button" class="btn btn-secondary m-2">Cancelar</button>
+                        <!-- SALVAR -->
+                        <button type="submit" value="submit" class="btn btn-secondary m-2"  ng-show="submit" ng-click="adicionarTeam(team)" ng-disabled="teamForm.$invalid">Salvar</button>
+
+                        <!-- EDITAR -->
+                        <button type="submit" value="update" class="btn btn-secondary m-2" ng-click="updateTeam(edit)"  ng-show="update" ng-click="editarTeam(team)" ng-disabled="teamForm.$invalid">update</button>
+
+                        <!-- CANCELAR -->
+                        <button type="button" value="cancel" ng-click="cancelUpdate()" class="btn btn-secondary m-2" ng-show="cancel">Cancelar</button>
 
                     </div>
                   </div>

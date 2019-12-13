@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr" ng-app="">
+<html lang="pt-br" dir="ltr" ng-app="listaTeams">
   <head>
     <meta charset="utf-8">
 
@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap e CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- angularjs minificado -->
-    <script src="../js/angular.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Agularjs -->
+    <script src="../lib/angular.js"></script>
     <title>Editar</title>
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark" ng-controller="listaTeamsCtrl">
     <header class="">
       <nav class="navbar navbar-expand-lg navbar-light bg-amarelo">
 
@@ -40,14 +39,7 @@
             </li>
 
           </ul>
-          <form class="form-inline mr-auto ml-auto"  method="post">
 
-            <input type="search" name="" value="" class="form-control mr-sm-2 w-75" placeholder="Pesquisa" arial-label="Procurar" >
-            <button type="submit" name="button" class="btn  btn-outline-info">
-              <img src="../img/icons/search.svg" width="20" height="20" alt="">
-            </button>
-
-          </form>
         </div>
 
         <a href="../index.html" class="navbar-brand">
@@ -58,7 +50,7 @@
     </header>
 
     <main class="container bg-azul py-5">
-      <form class="container bg-dark text-light ">
+      <form class="container bg-dark text-light " ng-model="team in array">
         <fieldset>
 
           <!-- Form Name -->
@@ -68,8 +60,8 @@
           <div class="form-group ">
             <label class="col control-label" for="name">NOME</label>
             <div class="col">
-            <input id="name" name="name" type="text" placeholder="" class="form-control input-md">
-            <span class="help-block">Informe nome do time</span>
+            <input id="name"  name="name" type="text" placeholder="" class="form-control input-md">
+            <span class="help-block">Informe nome do time {{team.id}}</span>
             </div>
           </div>
 

@@ -1,7 +1,17 @@
 
 app.controller("listaTeamsCtrl", function($scope, $http) {
-  $scope.array = [];
+  $scope.array = []; //VARIAVEL   QUE RECEBERA OS DADOS DO SERVIDOR
+  $scope.titulo = '';
+  $scope.edit = [];
 
+
+  $scope.cadTeams = function() {
+
+    $scope.submit = true;
+    $scope.update = false;
+    $scope.cancel = true;
+    $scope.titulo = 'CADASTRO';
+  };
   //GET
   /* outro formato de get
   var carregarTeams = function() {
@@ -11,7 +21,6 @@ app.controller("listaTeamsCtrl", function($scope, $http) {
        $scope.array = response.data;
      });
   };*/
-
   var carregarTeams = function() {
     $http({
       method: 'GET',
@@ -55,22 +64,17 @@ app.controller("listaTeamsCtrl", function($scope, $http) {
   };
 
 
-  // Del
-  /*
-  $scope.apagarTeam = function(teams) {
-    $scope.teams = teams.filter(function(team) {
-      if (!team.selecionado) return team;
-    });
-  };*/
+  // DELETE
   $scope.apagarTeam = function(team) {
+
     $http({
           method: "DELETE",
-          url: 'http://localhost:3000/teams' + team.id
+          url: 'http://localhost:3000/teams/' + team.id
       })
       .then(function(response) {
               delete $scope.team;
-              carregarTeams();
-              alert("EQUIPE DELETADA COM SUCESSO!!!")
+              alert("EQUIPE DELETADA COM SUCESSO!!!");
+              carregarTeams()
 
       },
       function(response) { // optional
@@ -78,18 +82,39 @@ app.controller("listaTeamsCtrl", function($scope, $http) {
       });
   };
 
-
-  $scope.isTeamSelecionado = function(teams) {
-    return teams.some(function(team) {
-      return team.selecionado;
-    });
+  //EDITAR
+  $scope.editarTeam = function(team) {
+      $scope.edit = team;
+      $scope.titulo = 'EDITAR';
+      $scope.submit = false;
+      $scope.update = true;
+      $scope.cancel = true;
   };
 
-  // ordenação
+  // PUT
+  $scope.updateTeam = function() {
+    $http({
+          method: "PUT",
+          url: 'http://localhost:3000/teams/' + $scope.edit
+      })
+      .then(function(response) {
+        console.log(response);
+              delete $scope.array;
+              alert("EQUIPE EDITADA COM SUCESSO!!!");
+              carregarTeams()
+
+      },
+      function(response) { // optional
+          alert("ERRO AO EDITAR EQUIPE!!!")
+      });
+  };
+
+
+  //ORDENAR OS ELEMENTOS
   $scope.ordenarPor = function(campo) {
     $scope.criterioDeOrdenacao = campo;
     $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
   };
 
-  carregarTeams();
+  carregarTeams(); //CARREGAR O BANCO NO FRONTEND
 });
